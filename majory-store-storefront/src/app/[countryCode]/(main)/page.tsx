@@ -41,7 +41,7 @@ export default async function Home(props: {
       <CategoryList />
       <ProductList
         title="Боди и Топы"
-        categoryId="pcat_01JKEBD112QCR0R0TET8W71WHF"
+        categoryId="pcat_01JMD442M7686QKDV4S5ERA9PA"
         type="body"
       />
       <ProductList
