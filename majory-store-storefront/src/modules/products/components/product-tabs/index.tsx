@@ -6,6 +6,8 @@ import Refresh from "@modules/common/icons/refresh"
 
 import Accordion from "./accordion"
 import { HttpTypes } from "@medusajs/types"
+import { ArrowRightIcon } from "lucide-react"
+import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
 type ProductTabsProps = {
   product: HttpTypes.StoreProduct
@@ -25,6 +27,13 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
 
   return (
     <div className="w-full">
+            <LocalizedClientLink
+        href="/size-table"
+        className="txt-medium flex justify-between border-t-[1px] px-[5px] py-4 font-sans text-sm font-normal text-ui-fg-subtle"
+      >
+        Таблица размеров
+        <ArrowRightIcon className="mr-1 h-5 w-5" />
+      </LocalizedClientLink>
       <Accordion type="multiple">
         {tabs.map((tab, i) => (
           <Accordion.Item
@@ -47,30 +56,22 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
       <div className="grid grid-cols-2 gap-x-8">
         <div className="flex flex-col gap-y-4">
           <div>
-            <span className="font-semibold">Material</span>
+            <span className="font-semibold">Материал</span>
             <p>{product.material ? product.material : "-"}</p>
           </div>
           <div>
-            <span className="font-semibold">Country of origin</span>
+            <span className="font-semibold">Страна производитель</span>
             <p>{product.origin_country ? product.origin_country : "-"}</p>
           </div>
           <div>
-            <span className="font-semibold">Type</span>
+            <span className="font-semibold">Тип</span>
             <p>{product.type ? product.type.value : "-"}</p>
           </div>
         </div>
         <div className="flex flex-col gap-y-4">
           <div>
-            <span className="font-semibold">Weight</span>
+            <span className="font-semibold">Вес</span>
             <p>{product.weight ? `${product.weight} g` : "-"}</p>
-          </div>
-          <div>
-            <span className="font-semibold">Dimensions</span>
-            <p>
-              {product.length && product.width && product.height
-                ? `${product.length}L x ${product.width}W x ${product.height}H`
-                : "-"}
-            </p>
           </div>
         </div>
       </div>
@@ -85,31 +86,33 @@ const ShippingInfoTab = () => {
         <div className="flex items-start gap-x-2">
           <FastDelivery />
           <div>
-            <span className="font-semibold">Fast delivery</span>
+            <span className="font-semibold">Доставка по всей России</span>
             <p className="max-w-sm">
-              Your package will arrive in 3-5 business days at your pick up
-              location or in the comfort of your home.
+              Осуществляется транспортной компанией СДЭК или другими удобными
+              для вас способами. Расходы по отправке товара несет покупатель.
+              Предоплата составляет 100%
+            </p>
+          </div>
+        </div>
+        <div className="flex items-start gap-x-2">
+          <FastDelivery />
+          <div>
+            <span className="font-semibold">Доставка в другие страны</span>
+            <p className="max-w-sm">
+              Осуществляется заранее обговоренными с менеджером транспортными
+              компаниями. Расходы по отправке товара несет покупатель.
+              Предоплата составляет 100%
             </p>
           </div>
         </div>
         <div className="flex items-start gap-x-2">
           <Refresh />
           <div>
-            <span className="font-semibold">Simple exchanges</span>
+            <span className="font-semibold">Обмен и возврат</span>
             <p className="max-w-sm">
-              Is the fit not quite right? No worries - we&apos;ll exchange your
-              product for a new one.
-            </p>
-          </div>
-        </div>
-        <div className="flex items-start gap-x-2">
-          <Back />
-          <div>
-            <span className="font-semibold">Easy returns</span>
-            <p className="max-w-sm">
-              Just return your product and we&apos;ll refund your money. No
-              questions asked – we&apos;ll do our best to make sure your return
-              is hassle-free.
+              Возможен в течение 5-ти календарных дней с момента получения
+              товара. При условии, что товар остается в первоначальном виде.
+              Расходы по отправке товара покупатель осуществляет за свой счет
             </p>
           </div>
         </div>

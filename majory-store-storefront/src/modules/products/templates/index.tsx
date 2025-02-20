@@ -10,6 +10,8 @@ import SkeletonRelatedProducts from "@modules/skeletons/templates/skeleton-relat
 import { notFound } from "next/navigation"
 import ProductActionsWrapper from "./product-actions-wrapper"
 import { HttpTypes } from "@medusajs/types"
+import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import { LinkIcon } from "lucide-react"
 
 type ProductTemplateProps = {
   product: HttpTypes.StoreProduct
@@ -29,17 +31,22 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
   return (
     <>
       <div
-        className="content-container flex flex-col small:flex-row small:items-start py-6 relative"
+        className="content-container relative flex flex-col py-6 small:flex-row small:items-start"
         data-testid="product-container"
       >
-        <div className="flex flex-col small:sticky small:top-48 small:py-0 small:max-w-[300px] w-full py-8 gap-y-6">
+        {/* Для Десктопа сферху нахвание и описание */}
+        <div className="hidden w-full flex-col gap-y-6 py-8 md:flex small:sticky small:top-48 small:max-w-[300px] small:py-0">
           <ProductInfo product={product} />
           <ProductTabs product={product} />
         </div>
-        <div className="block w-full relative">
+        {/* Для Телефона сферху только нахвание */}
+        <div className="flex w-full flex-col gap-y-6 py-8 md:hidden small:sticky small:top-48 small:max-w-[300px] small:py-0">
+          <ProductInfo product={product} />
+        </div>
+        <div className="relative block w-full">
           <ImageGallery images={product?.images || []} />
         </div>
-        <div className="flex flex-col small:sticky small:top-48 small:py-0 small:max-w-[300px] w-full py-8 gap-y-12">
+        <div className="flex w-full flex-col gap-y-12 py-8 small:sticky small:top-48 small:max-w-[300px] small:py-0">
           <ProductOnboardingCta />
           <Suspense
             fallback={
@@ -52,6 +59,10 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
           >
             <ProductActionsWrapper id={product.id} region={region} />
           </Suspense>
+        </div>
+        {/* Для телефона снизу информация */}
+        <div className="flex w-full flex-col gap-y-6 py-8 md:hidden small:sticky small:top-48 small:max-w-[300px] small:py-0">
+          <ProductTabs product={product} />
         </div>
       </div>
       <div

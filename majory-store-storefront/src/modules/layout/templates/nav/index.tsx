@@ -22,7 +22,7 @@ export default async function Nav() {
   }
 
   return (
-    <div className="font-gilroy group sticky inset-x-0 top-0 z-50 border-b border-ui-border-base bg-white shadow-md">
+    <div className="group sticky inset-x-0 top-0 z-[29] border-b border-ui-border-base bg-white font-gilroy shadow-md">
       <header className="relative mx-auto h-16 max-w-7xl duration-200">
         <nav className="content-container text-small-regular flex h-full w-full items-center justify-between text-ui-fg-subtle">
           {/* only smart phone */}
@@ -49,32 +49,30 @@ export default async function Nav() {
           </div>
           {/* Desktop Блок с сылками  */}
           <div className="hidden w-full gap-10 px-10 md:flex">
-            <div
-              className="text-[14px] font-[500] uppercase text-[#720317] hover:text-ui-fg-base"
-            >
+            <div className="text-[14px] font-[500] uppercase text-[#720317] hover:text-ui-fg-base">
               <ScrollButton targetId="categories-list">КАТАЛОГ</ScrollButton>
             </div>
-            <Link
+            <LocalizedClientLink
               href={"/about-us"}
               className="text-[14px] font-[500] uppercase text-[#720317] hover:text-ui-fg-base"
             >
               О нас
-            </Link>
-            <Link
-              href={""}
+            </LocalizedClientLink>
+            <LocalizedClientLink
+              href={"/contacts"}
               className="text-[14px] font-[500] uppercase text-[#720317] hover:text-ui-fg-base"
             >
               Контакты
-            </Link>
-            <Link
-              href={""}
+            </LocalizedClientLink>
+            <LocalizedClientLink
+              href={"/delivery"}
               className="text-[14px] font-[500] uppercase text-[#720317] hover:text-ui-fg-base"
             >
               Доставка
-            </Link>
+            </LocalizedClientLink>
           </div>
 
-          <div className="flex h-full basis-0 items-center justify-end gap-x-6">
+          <div className="flex h-full basis-0 items-center justify-end gap-x-6 z-[29]">
             <Suspense
               fallback={
                 <LocalizedClientLink

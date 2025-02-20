@@ -14,48 +14,56 @@ export default async function Footer() {
   const productCategories = await listCategories()
 
   return (
-    <footer className="font-gilroy bg-[#660016] py-12 text-white">
-      <div className="container mx-auto px-4">
+    <footer className="bg-[#660016] py-12 font-gilroy text-white">
+      <div className="container mx-auto max-w-6xl px-8 md:px-4">
         <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-3">
           {/* Contact Information */}
-          <div className="flex justify-between">
+          <div className="flex h-full items-start justify-between">
             <div className="space-y-2">
-              <h2 className="mb-4 text-xl">Контакты</h2>
+              <LocalizedClientLink href="/contacts">
+                <h2 className="mb-4 text-xl">Контакты</h2>
+              </LocalizedClientLink>
               <p>+7(xxx)xxx-xx-xx</p>
               <p>mejory.ru</p>
               <p>Inst: @_mejory_</p>
             </div>
             <div className="space-y-2">
-              <h2 className="mb-4 text-xl">Доставка</h2>
-              <p>+7(xxx)xxx-xx-xx</p>
+              <LocalizedClientLink href="/size-table">
+                <h2 className="mb-4 text-xl">Таблица размеров</h2>
+              </LocalizedClientLink>
+              {/* <p>+7(xxx)xxx-xx-xx</p>
               <p>mejory.ru</p>
-              <p>Inst: @_mejory_</p>
+              <p>Inst: @_mejory_</p> */}
             </div>
           </div>
 
           {/* Center Logo */}
-          <div className="flex justify-center">
+          <LocalizedClientLink href="/" className="flex justify-center">
             <Image
-              src="/footerlogo.png"
+              src="/MejoryFooterLogo.png"
               alt="Mejory Logo"
               width={300}
               height={100}
               className="object-contain"
             />
-          </div>
+          </LocalizedClientLink>
 
-          <div className="flex justify-between">
+          <div className="flex h-full items-start justify-between">
             <div className="space-y-2">
-              <h2 className="mb-4 text-xl">Таблица размеров</h2>
-              <p>+7(xxx)xxx-xx-xx</p>
+              <LocalizedClientLink href="/delivery">
+                <h2 className="mb-4 text-xl">Доставка</h2>
+              </LocalizedClientLink>
+              {/* <p>+7(xxx)xxx-xx-xx</p>
               <p>mejory.ru</p>
-              <p>Inst: @_mejory_</p>
+              <p>Inst: @_mejory_</p> */}
             </div>
             <div className="space-y-2">
-              <h2 className="mb-4 text-xl">О нас</h2>
-              <p>+7(xxx)xxx-xx-xx</p>
+              <LocalizedClientLink href="/about-us">
+                <h2 className="mb-4 text-xl">О нас</h2>
+              </LocalizedClientLink>
+              {/* <p>+7(xxx)xxx-xx-xx</p>
               <p>mejory.ru</p>
-              <p>Inst: @_mejory_</p>
+              <p>Inst: @_mejory_</p> */}
             </div>
           </div>
 

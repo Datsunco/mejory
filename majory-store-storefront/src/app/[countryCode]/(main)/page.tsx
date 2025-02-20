@@ -11,9 +11,18 @@ import ProductList from "@modules/home/components/product-list"
 import AboutUsTemplate from "@modules/about-us/templates"
 
 export const metadata: Metadata = {
-  title: "Medusa Next.js Starter Template",
+  title: "Mejory Store",
   description:
-    "A performant frontend ecommerce starter template with Next.js 14 and Medusa.",
+    "Mejory — ваш источник стильной и комфортной одежды для бальных танцев. Яркие платья, стильные аксессуары и высокое качество для уверенности на паркете.",
+  keywords:
+    "бальные танцы, танцевальная одежда, танцевальные костюмы, аксессуары для танцоров, Mejory, платья для танцев",
+  openGraph: {
+    title: "Mejory | Элегантная одежда и аксессуары для бальных танцев",
+    description:
+      "Mejory — ваш источник стильной и комфортной одежды для бальных танцев. Яркие платья, стильные аксессуары и высокое качество для уверенности на паркете.",
+    images: ["/images/og-home.jpg"],
+    type: "website",
+  },
 }
 
 export default async function Home(props: {

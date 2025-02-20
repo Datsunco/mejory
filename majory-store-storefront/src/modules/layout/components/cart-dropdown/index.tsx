@@ -215,12 +215,12 @@ const CartDropdown = ({
                   <div className="text-small-regular flex h-6 w-6 items-center justify-center rounded-full bg-gray-900 text-white">
                     <span>0</span>
                   </div>
-                  <span>Your shopping bag is empty.</span>
+                  <span>Ваша корзина пока пуста</span>
                   <div>
                     <LocalizedClientLink href="/store">
                       <>
-                        <span className="sr-only">Go to all products page</span>
-                        <Button onClick={close}>Explore products</Button>
+                        <span className="sr-only">На страницу всех товаров</span>
+                        <Button onClick={close}>Смотреть товары</Button>
                       </>
                     </LocalizedClientLink>
                   </div>

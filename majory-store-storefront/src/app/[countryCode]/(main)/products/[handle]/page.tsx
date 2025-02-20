@@ -63,11 +63,12 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${product.title} | Medusa Store`,
-    description: `${product.title}`,
+    title: `${product.title} | Mejory`,
+    description: `Купите ${product.title} для бальных танцев. ${product.description}. Высокое качество, стиль и комфорт от Mejory.`,
+    keywords: `${product.title}, купить ${product.title}, танцевальная одежда, бальные танцы, Mejory`,
     openGraph: {
-      title: `${product.title} | Medusa Store`,
-      description: `${product.title}`,
+      title: `${product.title} | Mejory — Элегантная одежда для бальных танцев`,
+      description: `Купите ${product.title} для бальных танцев. ${product.description}. Высокое качество, стиль и комфорт от Mejory.`,
       images: product.thumbnail ? [product.thumbnail] : [],
     },
   }
