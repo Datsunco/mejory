@@ -44,6 +44,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
       data-mode="light"
       className={`${Gilroy.variable} ${merriweather.variable}`}
     >
+      <meta name="yandex-verification" content="285561159d8ebcd5" />
       <body>
         <main className="relative">{props.children}</main>
       </body>
